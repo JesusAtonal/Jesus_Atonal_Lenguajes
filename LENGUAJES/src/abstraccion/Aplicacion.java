@@ -92,8 +92,13 @@ public class Aplicacion extends javax.swing.JFrame {
         Usuario jesus=new Usuario();
         //jesus.peso=62;
         //jesus.altura=1.66f;
-        jesus.setPeso(70);
-        jesus.setAltura(1.60f);
+        
+       //Primero pedimos el valor del texto al primer campo
+       float peso=Float.parseFloat(TextoPeso.getText());
+        jesus.setPeso(peso);
+        //hacemos lo mismo para la altura
+        float altura=Float.parseFloat(TextoAltura.getText());
+        jesus.setAltura(altura);
 
         Imc modelo=new Imc();
         modelo.u=jesus;
