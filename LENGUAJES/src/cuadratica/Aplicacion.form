@@ -29,20 +29,20 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="b" max="32767" attributes="0"/>
+                      <Component id="textob" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="a" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="textoa" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="c" max="32767" attributes="0"/>
+                      <Component id="textoc" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
+              <EmptySpace pref="111" max="32767" attributes="0"/>
               <Component id="calcular" min="-2" pref="95" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
           </Group>
@@ -61,25 +61,25 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="a" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textoa" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="b" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textob" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="calcular" alignment="3" pref="61" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="c" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textoc" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="x1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="x2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="66" max="32767" attributes="0"/>
+              <EmptySpace pref="88" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -109,14 +109,14 @@
         <Property name="text" type="java.lang.String" value="C:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="a">
+    <Component class="javax.swing.JTextField" name="textoa">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="b">
+    <Component class="javax.swing.JTextField" name="textob">
     </Component>
-    <Component class="javax.swing.JTextField" name="c">
+    <Component class="javax.swing.JTextField" name="textoc">
     </Component>
     <Component class="javax.swing.JButton" name="calcular">
       <Properties>

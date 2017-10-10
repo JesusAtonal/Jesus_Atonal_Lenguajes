@@ -30,9 +30,9 @@ public class Aplicacion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        a = new javax.swing.JTextField();
-        b = new javax.swing.JTextField();
-        c = new javax.swing.JTextField();
+        textoa = new javax.swing.JTextField();
+        textob = new javax.swing.JTextField();
+        textoc = new javax.swing.JTextField();
         calcular = new javax.swing.JButton();
         x1 = new javax.swing.JLabel();
         x2 = new javax.swing.JLabel();
@@ -48,9 +48,9 @@ public class Aplicacion extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("C:");
 
-        a.addActionListener(new java.awt.event.ActionListener() {
+        textoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aActionPerformed(evt);
+                textoaActionPerformed(evt);
             }
         });
 
@@ -79,16 +79,16 @@ public class Aplicacion extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(b))
+                        .addComponent(textob))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textoa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(c)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(textoc)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71))
             .addGroup(layout.createSequentialGroup()
@@ -104,33 +104,43 @@ public class Aplicacion extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(calcular, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(x1)
                     .addComponent(x2))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aActionPerformed
+    private void textoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_aActionPerformed
+    }//GEN-LAST:event_textoaActionPerformed
 
     private void calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularActionPerformed
         // TODO add your handling code here:
+        float a=Float.parseFloat(textoa.getText());
+        float b=Float.parseFloat(textob.getText());
+        float c=Float.parseFloat(textoc.getText());
         
+        //Para probar generamos un objeto de tipo ecuacion ecuacion
+        EcuacionCuadratica ec=new EcuacionCuadratica();
+        ec.setA(a);
+        ec.setB(b);
+        ec.setC(c);
+        x1.setText(ec.raiz1());
+        x2.setText(ec.raiz2());
     }//GEN-LAST:event_calcularActionPerformed
 
     /**
@@ -169,13 +179,13 @@ public class Aplicacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField a;
-    private javax.swing.JTextField b;
-    private javax.swing.JTextField c;
     private javax.swing.JButton calcular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField textoa;
+    private javax.swing.JTextField textob;
+    private javax.swing.JTextField textoc;
     private javax.swing.JLabel x1;
     private javax.swing.JLabel x2;
     // End of variables declaration//GEN-END:variables
