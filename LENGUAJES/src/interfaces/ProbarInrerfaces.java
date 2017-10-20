@@ -9,12 +9,11 @@ package interfaces;
  *
  * @author T-102
  */
-public interface Direccion {
+public class ProbarInrerfaces {
     
-    public int x=2;
-    
-    //un metodo
-    public void generarDireccion();
-    
+    public static void main(String[] args) {
+       // Direccion d=new Direccion();
+       Direccion d;
+    }
     
 }
