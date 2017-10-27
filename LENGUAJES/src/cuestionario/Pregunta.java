@@ -9,18 +9,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author T-102
+ * @author DUGPLPW7
  */
 public class Pregunta {
-    
-        private ArrayList<Opcion> opciones;
-        private String titulo;
+    private String titulo;
+    private ArrayList<Opcion> opciones;
 
-    public ArrayList<Opcion> getOpciones() {
-        return opciones;
-    }
-
-    public void setOpciones(ArrayList<Opcion> opciones) {
+    public Pregunta(String titulo, ArrayList<Opcion> opciones) {
+        this.titulo = titulo;
         this.opciones = opciones;
     }
 
@@ -31,5 +27,12 @@ public class Pregunta {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    
+
+    public ArrayList<Opcion> getOpciones() {
+        return opciones;
+    }
+
+    public void setOpciones(ArrayList<Opcion> opciones) {
+        this.opciones = opciones;
+    }
 }

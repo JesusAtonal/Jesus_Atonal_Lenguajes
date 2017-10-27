@@ -7,17 +7,17 @@ package cuestionario;
 
 /**
  *
- * @author T-102
+ * @author DUGPLPW7
  */
 public class Opcion {
-   
-        private String titulo;
-        private boolean correcta;   
+    private String titulo;
+    private boolean correcta;
 
     public Opcion(String titulo, boolean correcta) {
         this.titulo = titulo;
         this.correcta = correcta;
     }
+    
 
     public String getTitulo() {
         return titulo;
@@ -34,6 +34,4 @@ public class Opcion {
     public void setCorrecta(boolean correcta) {
         this.correcta = correcta;
     }
-    
-    
 }
