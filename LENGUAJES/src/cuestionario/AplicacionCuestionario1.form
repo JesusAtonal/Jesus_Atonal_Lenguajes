@@ -51,10 +51,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="PanelOpciones" min="-2" pref="220" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="PanelOpciones" min="-2" pref="220" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="botonRespuesta" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Component id="etiquetaTitulo" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="129" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -64,9 +68,14 @@
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="Titulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="etiquetaTitulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelOpciones" min="-2" pref="228" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="etiquetaTitulo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="PanelOpciones" min="-2" pref="228" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="botonRespuesta" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace pref="112" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -84,12 +93,25 @@
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="PanelOpciones">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
+            </Property>
+          </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
             <Property name="columns" type="int" value="1"/>
             <Property name="rows" type="int" value="4"/>
           </Layout>
         </Container>
+        <Component class="javax.swing.JButton" name="botonRespuesta">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Checar Respuesta"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRespuestaActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

@@ -6,6 +6,7 @@
 package cuestionario;
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 /**
@@ -35,6 +36,7 @@ public class AplicacionCuestionario1 extends javax.swing.JFrame {
         Titulo = new javax.swing.JLabel();
         etiquetaTitulo = new javax.swing.JLabel();
         PanelOpciones = new javax.swing.JPanel();
+        botonRespuesta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,7 +46,15 @@ public class AplicacionCuestionario1 extends javax.swing.JFrame {
 
         etiquetaTitulo.setText("Este sera el titulo de la pregunta");
 
+        PanelOpciones.setBackground(new java.awt.Color(153, 204, 255));
         PanelOpciones.setLayout(new java.awt.GridLayout(4, 1));
+
+        botonRespuesta.setText("Checar Respuesta");
+        botonRespuesta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRespuestaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -57,9 +67,12 @@ public class AplicacionCuestionario1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(PanelOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(botonRespuesta))
                     .addComponent(etiquetaTitulo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -67,9 +80,12 @@ public class AplicacionCuestionario1 extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(Titulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(etiquetaTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(etiquetaTitulo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PanelOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonRespuesta))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
 
@@ -86,6 +102,10 @@ public class AplicacionCuestionario1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonRespuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRespuestaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRespuestaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,6 +145,7 @@ public class AplicacionCuestionario1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelOpciones;
     private javax.swing.JLabel Titulo;
+    private javax.swing.JButton botonRespuesta;
     private javax.swing.JLabel etiquetaTitulo;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
@@ -138,25 +159,32 @@ public class AplicacionCuestionario1 extends javax.swing.JFrame {
         
         //Creamos un agrupador de botones
         ButtonGroup grupo=new ButtonGroup();
-        grupo.add(r1);
-        grupo.add(r2);
-        grupo.add(r3);
-        grupo.add(r4);
-        //Los agregamos a nuestro panel PanelOpciones
-        PanelOpciones.add(r1);
-        PanelOpciones.add(r2);
-        PanelOpciones.add(r3);
-        PanelOpciones.add(r4); 
         
         //Vamos a indicarle que pónga la primer pregunta y sus respectiva opcones
         ArrayList<Pregunta> preguntas=new GeneradorCuestionario().generar();
         
         //Del arraylist que se llama preguntas obtenemos el titulo de la primera
+        //ArrayList<JRadioButton> radios=new ArrayList<>();
+        JRadioButton []radios2=new JRadioButton[preguntas.get(0).getOpciones().size()];
+        
         etiquetaTitulo.setText(preguntas.get(0).getTitulo());
-        r1.setText(preguntas.get(0).getOpciones().get(0).getTitulo());
-        r2.setText(preguntas.get(0).getOpciones().get(1).getTitulo());
-        r3.setText(preguntas.get(0).getOpciones().get(2).getTitulo());
-        r4.setText(preguntas.get(0).getOpciones().get(3).getTitulo()); 
+        
+        int indice=0;
+        for(JRadioButton radio: radios2){
+        grupo.add(radio);
+        radio.setText(preguntas.get(0).getOpciones().get(indice).getTitulo());
+        PanelOpciones.add(radio);
+        indice++;
+        }
+        r1.setText(preguntas.get(0).getOpciones().get(0).getTitulo()); 
+        //Aqui vamos a programar nel evento del boton con 
+        //Programacion funcional
+        
+        //Vamos a buscar la opcion correcta
+        
+        botonRespuesta.addActionListener(evento->{
+            JOptionPane.showConfirmDialog(this, "Probando esto");
+        });
         
         
     }
