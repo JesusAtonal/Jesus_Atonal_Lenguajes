@@ -93,17 +93,23 @@ public class Aplicacion extends javax.swing.JFrame {
         //jesus.peso=62;
         //jesus.altura=1.66f;
         
+        
+        try{
        //Primero pedimos el valor del texto al primer campo
        float peso=Float.parseFloat(TextoPeso.getText());
+       Validaciones.validarNumeroNoNegativo(peso);
         jesus.setPeso(peso);
         //hacemos lo mismo para la altura
         float altura=Float.parseFloat(TextoAltura.getText());
+        Validaciones.validarNumeroNoNegativo(altura);
         jesus.setAltura(altura);
 
         Imc modelo=new Imc();
         modelo.u=jesus;
                 etiqueta.setText( modelo.calcular());
-        
+        }catch(Exception e){
+            etiqueta.setText(e.getMessage()); 
+        }
     }//GEN-LAST:event_botoncitoActionPerformed
 
     /**
