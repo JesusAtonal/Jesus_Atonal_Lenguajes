@@ -11,6 +11,7 @@ package conexion;
  */
 
 import java.sql.*;
+
 public class ProbarConexion {
     
     public static void main(String[] args) {
@@ -18,10 +19,19 @@ public class ProbarConexion {
         try{
         con = Conexion.conectarse("root", "");
         System.out.println("Te conectaste !!");
+        //Aqui vienen los queries de mysql
+        
         }catch (ClassNotFoundException e){
+            System.out.println("No se cargo bien el driver");
         }catch(SQLException e){
+            System.out.println("Un error de sql"+e.getMessage());
         }finally{
-            con.close();
+            try {
+                if (con!=null)
+                    con.close();
+                System.out.println("Ya se cerro todo :D :3 !!");
+            } catch (SQLException ex) {
+            }
         }
     }
     
