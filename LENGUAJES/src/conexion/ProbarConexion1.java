@@ -11,6 +11,7 @@ package conexion;
  */
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class ProbarConexion1 {
@@ -27,8 +28,29 @@ public class ProbarConexion1 {
             //Caso especial de select
             //paso 1 generar una consulta (query)
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from tablita");
-        
+            ResultSet rs = st.executeQuery("select * from tablita where id = 1");
+            
+            //Viene la traduccion
+            
+            ArrayList<Tablita> registros = new ArrayList<>();
+            
+            while(rs.next()){
+                
+                Tablita t=new Tablita();
+                t.setId (rs.getInt(1));
+                t.setNombre (rs.getString(2));
+                registros.add(t);
+            }
+            
+            for (Tablita t:registros){
+            
+                System.out.println("Id: "+t.getId()+" Nombre: "+t.getNombre());
+            
+            }
+            
+            st.close();
+            
+       
         }catch (ClassNotFoundException e){
             System.out.println("No se cargo bien el driver");
         }catch(SQLException e){
