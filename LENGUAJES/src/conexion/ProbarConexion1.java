@@ -7,7 +7,7 @@ package conexion;
 
 /**
  *
- * @author T-102
+ * @author T-102 
  */
 
 import java.sql.*;
